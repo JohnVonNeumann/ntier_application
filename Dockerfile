@@ -5,3 +5,5 @@ WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
+RUN apt update
+RUN apt-get install nginx -y
