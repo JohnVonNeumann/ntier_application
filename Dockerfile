@@ -9,3 +9,6 @@ RUN apt update
 RUN apt-get install nginx -y
 RUN sed -i "3i daemon off;" /etc/nginx/nginx.conf
 COPY mysite_nginx.conf /etc/nginx/sites-available/default
+RUN apt install supervisor -y
+COPY supervisor-app.conf /etc/supervisor/conf.d/
+CMD ["supervisord", "-n"]
