@@ -7,7 +7,6 @@ services:
       - "5432:5432"
   web:
     build: .
-    command: uwsgi --http :8001 --module app.wsgi 
     volumes:
       - .:/code
     ports:
