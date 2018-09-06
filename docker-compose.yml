@@ -7,10 +7,10 @@ services:
       - "5432:5432"
   web:
     build: .
-    command: uwsgi --http :8000 --module app.wsgi 
+    command: uwsgi --http :8001 --module app.wsgi 
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - "80:80"
     depends_on:
       - db
